@@ -11,6 +11,10 @@ import EditProduct from "./componets/edit.component.js";
 import ProductList from "./componets/list.component.js";
 import CreateProduct from "./componets/create.component.js";
 
+//club
+import Club from "./componets/Club/clubview.componet.js";
+import CreateClub from "./componets/Club/clubcreate.componet.js";
+import EditClub from "./componets/Club/clubedit.componet.js";
 
 function App() {
   return (<Router>
@@ -18,6 +22,9 @@ function App() {
       <Container>
         <Link to={"/"} className="navbar-brand text-white">
           Basic Crud App
+        </Link>
+        <Link to={"/clubdata"} className="navbar text-white">
+          Club Data
         </Link>
       </Container>
     </Navbar>
@@ -28,6 +35,11 @@ function App() {
           <Routes>
             <Route path="/product/create" element={<CreateProduct />} />
             <Route path="/product/edit/:id" element={<EditProduct />} />
+
+
+            <Route path="/clubdata" element={<Club/>}/>
+            <Route path="/club/create" element={<CreateClub />} />
+            <Route path="/club/edit/:id" element={<EditClub/>}/>
             <Route exact path='/' element={<ProductList />} />
           </Routes>
         </Col>
