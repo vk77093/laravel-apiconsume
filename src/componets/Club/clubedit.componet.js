@@ -13,7 +13,7 @@ export default function EditClub(){
 
    const [club_name, setClubName] = useState("")
   const [short_descrption, setShortDescription] = useState("")
-  const [club_image, setClubImage] = useState()
+  const [club_image, setClubImage] = useState(null)
   const [validationError,setValidationError] = useState({})
   
   useEffect(()=>{
@@ -39,7 +39,7 @@ const updateClub=async (e)=>{
 
 
     const formData=new FormData()
-    formData.append('_method','PUT');
+    formData.append('_method','PATCH');
     formData.append('club_name',club_name)
     formData.append('short_descrption',short_descrption)
     if(club_image !==null){
